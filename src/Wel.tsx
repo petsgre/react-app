@@ -6,14 +6,14 @@ interface IProps {
 }
 
 class Wel extends React.Component<IProps, object> {
-  public my:string = '1';
-  public str:number = 123;
-  public p:Person = new Person()
-  constructor(props:any) {
+  public my: string = '1';
+  public str: number = 123;
+  public p: Person = new Person()
+  constructor(props: any) {
     super(props);
     this.my = '123'
   }
-  public show(){
+  public show() {
     this.p.name = '18'
     console.log(this.p)
     this.p.getName()
