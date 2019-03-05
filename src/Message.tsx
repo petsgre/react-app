@@ -27,15 +27,15 @@ class Wel extends React.Component<IProps, object> {
       })
       .then(_ => {
         // always executed
-        // console.log(123);
+        console.log(123);
         
       });
-    // this.p.name = '18'
-    // console.log(this.p)
-    // this.p.getName()
-    // const someValue: any = "this is a string";
-    // const strLength: number = someValue.length;
-    // console.log(strLength)
+    this.p.name = '18'
+    console.log(this.p)
+    this.p.getName()
+    const someValue: any = "this is a string";
+    const strLength: number = someValue.length;
+    console.log(strLength)
   }
   public componentDidMount() {
     this.show()
@@ -44,7 +44,7 @@ class Wel extends React.Component<IProps, object> {
     return (
       <div className="Wel">
         <h3>{this.props.name}</h3>
-        <h3>{this.my}</h3>
+        <h3>{this.my}666</h3>
       </div>
     );
   }
