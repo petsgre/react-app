@@ -34,7 +34,7 @@ class Wel extends React.Component<IProps, object> {
       })
       .then(_ => {
         // always executed
-        // console.log(test);
+        // console.log(1);
 
       });
     // this.p.name = '18'
