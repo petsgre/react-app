@@ -16,7 +16,21 @@ class Wel extends React.Component<IProps, object> {
     this.my = '123'
   }
   public show() {
-    axios.get('/user?ID=12345')
+    axios.get('/a')
+      .then(response => {
+        // handle success
+        console.log(response);
+      })
+      .catch(error => {
+        // handle error
+        console.log(error);
+      })
+      .then(_ => {
+        // always executed
+        // console.log(123);
+        
+      });
+    axios.get('/api/cities')
       .then(response => {
         // handle success
         console.log(response);
@@ -39,6 +53,9 @@ class Wel extends React.Component<IProps, object> {
   }
   public componentDidMount() {
     this.show()
+    const id = (this.props as any)
+    console.log(id);
+    
   }
   public render() {
     return (

@@ -109,12 +109,13 @@
     ]
   },
   "proxy": {
-    "/api/RoomApi": {
-      "target": "https://www.166zx.com",
-      "changeOrigin": true
+    "/api": {
+      "target": "http://localhost:8080",
+      "changeOrigin": true,
+      "pathRewrite": {"^/api" : ""}
     },
-    "/api/v1": {
-      "target": "http://capi.douyucdn.cn",
+    "/a": {
+      "target": "http://localhost:8080/cities",
       "changeOrigin": true
     }
   }

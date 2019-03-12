@@ -23,7 +23,7 @@ class Wel extends React.Component<IProps, object> {
     this.routerWillLeave = this.routerWillLeave.bind(this);
   }
   public show(): string {
-    axios.get('https://www.166zx.com/edit/article/GetArticleClass')
+    axios.get('api/cities')
       .then(response => {
         // handle success
         console.log(response);
@@ -71,7 +71,7 @@ class Wel extends React.Component<IProps, object> {
         <Route
           exact={false}
           path={`${match.path}/messages/:id`}
-          component={Messages} onChange={this.routerWillLeave} />
+          component={Messages} onChange={this.routerWillLeave} params={ {id: 'Jkei3c32'} } />
           <Prompt message="确定要离开？" />
       </div>
     );
