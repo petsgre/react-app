@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as React from 'react';
-import Person from './Person'
+import Person from './model/Person'
 
 interface IProps {
   name: string;

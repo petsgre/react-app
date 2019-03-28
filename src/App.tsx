@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-import Wel from './Wel'
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -17,14 +16,14 @@ class App extends React.Component {
     this.aaa++
     // console.log(e);
     if(this.aaa % 2 === 0){
-      (this.props as any).history.push('/')
+      (this.props as any).history.push('/Help')
       return
     }
     this.setState(prevState => ({
       ok: true
     }));
     // console.log(this);
-    (this.props as any).history.push('/Inbox')
+    (this.props as any).history.push('/About')
   }
   public routerWillLeave(nextLocation: any) {
     console.log('******************');
@@ -45,7 +44,6 @@ class App extends React.Component {
         <p onClick={this.toMsg} className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload1.
         </p>
-        <Wel name={this.name}/>
       </div>
     );
   }
