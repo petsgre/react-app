@@ -1,21 +1,29 @@
 import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
+import bus from '@/plugins/bus'
 
 class App extends React.Component {
   public name: string = '666';
   public aaa: number = 1;
-  constructor(props:any){
+  constructor(props: any) {
     super(props)
     this.toMsg = this.toMsg.bind(this);
+  }
+  public componentDidMount() {
+
+    bus.on('add', () => {
+      console.log('触发了事件总线');
+
+    })
   }
   /**
    * toMsg
    */
-  public toMsg(e:any) {
+  public toMsg(e: any) {
     this.aaa++
     // console.log(e);
-    if(this.aaa % 2 === 0){
+    if (this.aaa % 2 === 0) {
       (this.props as any).history.push('/Help')
       return
     }
