@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Person from '../model/Person'
+import Sub from '@/components/Sub';
 
 interface IProps {
   name: string;
@@ -19,6 +20,7 @@ class Wel extends React.Component<IProps, object> {
     return (
       <div className="about">
         <h3>{this.name}</h3>
+        <Sub name={'sub'}/>
       </div>
     );
   }
