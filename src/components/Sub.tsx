@@ -3,6 +3,7 @@ import Person from '../model/Person'
 
 interface IProps {
   name: string;
+  cb(): void
 }
 // react 点击事件
 class Sub extends React.Component<IProps, object> {
@@ -17,6 +18,7 @@ class Sub extends React.Component<IProps, object> {
   }
   public clickHandle() {
     console.log('点击了', this);
+    this.props.cb()
   }
   public clickHandle1() {
     console.log('点击了');

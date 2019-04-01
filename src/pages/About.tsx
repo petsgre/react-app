@@ -16,11 +16,15 @@ class Wel extends React.Component<IProps, object> {
     console.log(this.name);
 
   }
+  public show() {
+    console.log('子组件触发了回调');
+
+  }
   public render() {
     return (
       <div className="about">
         <h3>{this.name}</h3>
-        <Sub name={'sub'}/>
+        <Sub name={'sub'} cb={this.show} />
       </div>
     );
   }
