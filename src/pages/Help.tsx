@@ -7,7 +7,8 @@ import About from '@/pages/About';
 import Sub from '@/components/Sub';
 interface IProps {
   name: string;
-  match:any
+  match: any;
+  [propName: string]: any
 }
 
 class Help extends React.Component<IProps, object> {
@@ -25,19 +26,19 @@ class Help extends React.Component<IProps, object> {
   public tab(e: any) {
     this.flag = !this.flag
     if (this.flag) {
-      (this.props as any).history.push('/Help/One')
+      this.props.history.push('/Help/One')
       return
     }
-    (this.props as any).history.push('/Help/Two')
+    this.props.history.push('/Help/Two')
   }
   public render() {
     const match = this.props.match
     return (
       <div className="help">
         <h3 onClick={this.tab}>{this.name}</h3>
-            <Route path="/Help/One" exact component={About} />
-            <Route path="/Help/Two" exact component={Sub} />
-            <Route path={`${match.url}/:userId`} component={Sub}/>
+        <Route path="/Help/One" exact component={About} />
+        <Route path="/Help/Two" exact component={Sub} />
+        <Route path={`${match.url}/:userId`} component={Sub} />
       </div>
     );
   }
