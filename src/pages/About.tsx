@@ -3,6 +3,7 @@ import Person from '../model/Person'
 import Sub from '@/components/Sub';
 import bus from '@/plugins/bus'
 import { ThemeContext, themes } from '@/context/theme-context';
+import Inner from '@/components/HOC/Inner';
 
 interface IProps {
   name: string;
@@ -43,6 +44,7 @@ class About extends React.Component<IProps, object> {
         <ThemeContext.Provider value={(this.state as any).theme}>
           <Sub name={'sub'} cb={this.show} changeTheme={this.toggleTheme} />
         </ThemeContext.Provider>
+        <Inner type={'panl'} height={'20px'}/>
       </div>
     );
   }
