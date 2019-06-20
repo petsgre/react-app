@@ -2,6 +2,8 @@ import * as React from 'react';
 import Person from '../model/Person'
 import bus from '@/plugins/bus'
 import { ThemeContext } from '../context/theme-context';
+import { store, store1 } from '@/store/store'
+
 interface IProps {
   name: string;
   cb(): void
@@ -23,7 +25,8 @@ class Sub extends React.Component<IProps, object> {
     console.log(context);
     console.log(this);
     this.props.changeTheme()
-
+    store.dispatch({ type: 'DECREMENT' })
+    store1.dispatch({ type: 'DECREMENT' })
   }
   public clickHandle() {
     bus.emit('add')

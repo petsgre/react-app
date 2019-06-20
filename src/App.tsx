@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import logo from './logo.svg';
 import bus from '@/plugins/bus'
+import { store } from '@/store/store'
 
 class App extends React.Component {
   public name: string = '666';
@@ -21,6 +22,7 @@ class App extends React.Component {
    * toMsg
    */
   public toMsg(e: any) {
+    store.dispatch({ type: 'INCREMENT' })
     this.aaa++
     // console.log(e);
     if (this.aaa % 2 === 0) {
