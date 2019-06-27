@@ -5,6 +5,8 @@ function Test(){
     <div>123</div>
   )
 }
+
+// 高阶组件，时间上就是一个方法，接受一个react组件，在返回一个react组件
 export default function (InnerComponent: any) {
   return class Box extends React.Component<any, object> {
     public name = 'Box'

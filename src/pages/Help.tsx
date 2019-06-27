@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import About from '@/pages/About';
 import Sub from '@/components/Sub';
+import Child1 from '@/components/Child1';
 interface IProps {
   name: string;
   match: any;
@@ -36,6 +37,7 @@ class Help extends React.Component<IProps, object> {
     return (
       <div className="help">
         <h3 onClick={this.tab}>{this.name}</h3>
+        <Child1 msg="data from parent"/>
         <Route path="/Help/One" exact component={About} />
         <Route path="/Help/Two" exact component={Sub} />
         <Route path={`${match.url}/:userId`} component={Sub} />
